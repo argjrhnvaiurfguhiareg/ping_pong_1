@@ -149,11 +149,13 @@ int movement_ball(int *ball_x, int *ball_y, int *ball_dx, int *ball_dy,
   if (*ball_x < 0) {
     *ball_x = 0;
     *ball_dx = -(*ball_dx);
-    printf("\a"); fflush(stdout);
+    printf("\a");
+    fflush(stdout);
   } else if (*ball_x > height - 1) {
     *ball_x = height - 1;
     *ball_dx = -(*ball_dx);
-    printf("\a"); fflush(stdout);
+    printf("\a");
+    fflush(stdout);
   }
 
   // Проверка для левой ракетки
@@ -161,7 +163,8 @@ int movement_ball(int *ball_x, int *ball_y, int *ball_dx, int *ball_dy,
     if (*ball_x >= racket_i && *ball_x < racket_i + racket_size) {
       *ball_y = 0;
       *ball_dy = -(*ball_dy);
-      printf("\a"); fflush(stdout);
+      printf("\a");
+      fflush(stdout);
     } else {
       return 1;
     }
@@ -172,7 +175,8 @@ int movement_ball(int *ball_x, int *ball_y, int *ball_dx, int *ball_dy,
     if (*ball_x >= racket_j && *ball_x < racket_j + racket_size) {
       *ball_y = width - 1;
       *ball_dy = -(*ball_dy);
-      printf("\a"); fflush(stdout);
+      printf("\a");
+      fflush(stdout);
     } else {
       return 2;
     }
